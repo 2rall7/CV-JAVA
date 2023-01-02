@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="370.0" prefWidth="582.0">
+            <children>
+                <Label layoutX="54.0" layoutY="47.0" text="ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴄᴠ ᴍᴀɴᴀɢᴇʀ">
+                    <font>
+                        <Font size="47.0" />
+                    </font>
+                </Label>
+                <ButtonBar layoutX="72.0" layoutY="185.0" prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                        <Button mnemonicParsing="false" onAction="#switchToCreateCVPage" text="Create CV" />
+                        <Button mnemonicParsing="false" onAction="#switchToDeleteCVPage" text="Delete CV" />
+                        <Button mnemonicParsing="false" onAction="#switchToEditCVPage" text="Edit CV" />
+                        <Button mnemonicParsing="false" onAction="#switchToListCVPage" text="List CVs" />
+                        <Button mnemonicParsing="false" onAction="#switchToPrintCVPage" text="Print CV" />
+                    </buttons>
+                </ButtonBar>
+                <Button layoutX="265.0" layoutY="244.0" mnemonicParsing="false" onAction="#switchToSearchPage" text="Search" />
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>
