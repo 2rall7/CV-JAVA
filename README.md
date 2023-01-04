@@ -30,7 +30,7 @@ If you want to get any help, you can return to the first page (welcome page) and
 
 ------------
 
-- [CV Manager Build Launcher](https://github.com/2rall7/CV-JAVA/releases/tag/untagged-cdee51e0fa716553f856)
+- [CV Manager Build Launcher](https://github.com/2rall7/CV-JAVA/releases/tag/untagged-cdee51e0fa716553f856) You can reach the executable file and source code of the project from this link.
 
 
 ### Libraries Included in the Source Code
