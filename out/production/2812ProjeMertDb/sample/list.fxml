@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <TabPane fx:id="ListPageTabPane" prefHeight="400.0" prefWidth="626.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="ListPageTab1" text="LIST CVs">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="listPageTableIDView" layoutX="24.0" layoutY="39.0" prefHeight="314.0" prefWidth="352.0">
+                                            <columns>
+                                                <TableColumn fx:id="IDfirst" prefWidth="74.40002822875977" text="id" />
+                                                <TableColumn fx:id="IDsecond" prefWidth="158.3999481201172" text="name" />
+                                                <TableColumn fx:id="IDthird" prefWidth="125.60003662109375" text="surname" />
+                                            </columns>
+                                        </TableView>
+                                        <Button layoutX="549.0" layoutY="319.0" mnemonicParsing="false" onAction="#switchToWelcomePage" prefHeight="30.0" prefWidth="60.0" text="go back" />
+                                        <Label layoutX="162.0" layoutY="14.0" prefHeight="18.0" prefWidth="358.0" text="CV LIST" />
+                                        <Button layoutX="515.0" layoutY="99.0" mnemonicParsing="false" onAction="#goToListPageTab2" text="show CV" />
+                                        <TextField fx:id="listFirstPageID" layoutX="430.0" layoutY="62.0" />
+                                        <Label layoutX="408.0" layoutY="66.0" text="id" />
+                                        <Label layoutX="408.0" layoutY="187.0" prefHeight="18.0" prefWidth="25.0" text="id" />
+                                        <Button layoutX="511.0" layoutY="221.0" mnemonicParsing="false" onAction="#gotoTagPage" text="go tag CV" />
+                                        <Label layoutX="398.0" layoutY="39.0" text="choose id to show or print the CV:" />
+                                        <TextField fx:id="tagIDTextField" layoutX="430.0" layoutY="183.0" />
+                                        <Label layoutX="398.0" layoutY="165.0" text="choose id to add tag:" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="ListPageTab2" text="SHOW CV">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="ListPageSpecificTableview" layoutX="165.0" layoutY="10.0" prefHeight="350.0" prefWidth="272.0">
+                                            <columns>
+                                                <TableColumn fx:id="ListPageAttrNameColumn" prefWidth="135.20001220703125" text="attribute name" />
+                                                <TableColumn fx:id="ListPageAttrValueColumn" prefWidth="145.5999755859375" text="attribute value" />
+                                            </columns>
+                                        </TableView>
+                                        <Button layoutX="489.0" layoutY="217.0" mnemonicParsing="false" onAction="#goToListPageTab1" prefHeight="25.0" prefWidth="71.0" text=" list CVs" />
+                                        <Button layoutX="489.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchToWelcomePage" prefHeight="25.0" prefWidth="73.0" text="go back" />
+                                        <Button layoutX="489.0" layoutY="249.0" mnemonicParsing="false" onAction="#print" onMouseClicked="#print" prefHeight="25.0" prefWidth="73.0" text="print CV" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="ListPageTagTab" text="TAG CV">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TextField fx:id="tagNameTextField" layoutX="58.0" layoutY="136.0" prefHeight="26.0" prefWidth="124.0" />
+                                        <Label layoutX="7.0" layoutY="140.0" text="tag name" />
+                                        <Button layoutX="120.0" layoutY="173.0" mnemonicParsing="false" onAction="#tag" text="add tag" />
+                                        <AnchorPane layoutX="183.0" layoutY="17.0" prefHeight="353.0" prefWidth="431.0">
+                                            <children>
+                                                <ScrollPane prefHeight="353.0" prefWidth="430.0">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="356.0" prefWidth="430.0">
+                                                            <children>
+                                                                <TableView fx:id="tagTableView" prefHeight="340.0" prefWidth="414.0">
+                                                                    <columns>
+                                                                        <TableColumn fx:id="tagID" prefWidth="124.79998475313187" text="id" />
+                                                                        <TableColumn fx:id="tagName" prefWidth="164.00001525878906" text="name" />
+                                                                        <TableColumn fx:id="tagSurname" prefWidth="124.79995727539062" text="surname" />
+                                                                    </columns>
+                                                                </TableView>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <ComboBox fx:id="tagNamesComboBox" layoutX="7.0" layoutY="23.0" onAction="#showAllTaggedIDNames" prefHeight="25.0" prefWidth="165.0" promptText="Select tag &amp; show CVs" />
+                                        <Button layoutX="107.0" layoutY="277.0" mnemonicParsing="false" onAction="#deleteTag" text="delete tag" />
+                                        <Label layoutX="7.0" layoutY="233.0" text="Select the tag name you " />
+                                        <Label layoutX="43.0" layoutY="251.0" text="want to delete from box" />
+                                        <Button layoutX="119.0" layoutY="331.0" mnemonicParsing="false" onAction="#switchToWelcomePage" text="go back" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
